@@ -6,6 +6,8 @@ Este repositório contém um projeto de análise de dados epidemiológicos focad
 
 O projeto processa um conjunto de dados estruturado para calcular e exibir a relação entre diagnósticos positivos e óbitos. A principal métrica analisada é o indicador que mostra quantos casos são registrados para cada 1 morte em cada país ou região.
 
+![Texto alternativo](images/newplot.png)
+
 ## Estrutura dos Dados
 
 O projeto utiliza um DataFrame com as seguintes colunas principais:
@@ -27,6 +29,8 @@ A visualização principal consiste em um gráfico de dispersão (Scatter Plot) 
 1.  **Eixo X**: Total de Casos.
 2.  **Eixo Y**: Total de Mortes.
 3.  **Cores**: Representam a métrica `casos_por_morte`, permitindo identificar rapidamente regiões com maior taxa de letalidade ou melhor cobertura de testagem.
+
+![Texto alternativo](images/newplot2.png)
 
 ## Como rodar o projeto
 
