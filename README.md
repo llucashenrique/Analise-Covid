@@ -1,52 +1,41 @@
-# Estudo com PySpark - NYC Taxi Data
-Este projeto tem como objetivo estudar e praticar o uso do **PySpark** para manipulação e transformação de dados em larga escala, utilizando como base o conjunto público de corridas de táxi da cidade de Nova York (**NYC Yellow Taxi Trips**), que contém informações sobre milhões de corridas de táxi.
+#  Análise de Dados: Letalidade por Região
 
-## Objetivo do Estudo
-Explorar conceitos fundamentais do PySpark, como:
-- Leitura e limpeza de dados em larga escala;
-- Criação de novas colunas e transformações;
-- Cálculo de métricas derivadas (ex: velocidade média e taxa de gorjeta);
-- Discretização de colunas numéricas (*binning*);
-- Filtragem e tratamento de valores inconsistentes.
+Este repositório contém um projeto de análise de dados epidemiológicos focado na correlação entre o volume de casos e a mortalidade registrada. O objetivo é visualizar a "eficiência" de saúde e testagem através da métrica de **casos por morte**.
 
-## Estrutura do Projeto
-```
-.
-├── data/                  # Dados brutos ou processados localmente
-├── notebooks/             # Notebooks com análises e transformações em PySpark
-├── .venv/                 # Ambiente virtual (criado pelo uv ou Python venv)
-├── pyproject.toml         # Configuração do ambiente e dependências
-├── uv.lock                # Arquivo de bloqueio do gerenciador de pacotes uv
-├── .python-version        # Versão do Python utilizada
-├── .gitignore             # Arquivos e pastas ignorados pelo Git
-└── README.md              # Este arquivo
-```
+## Descrição do Projeto
 
-## Como Excutar
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/azzolinovarella/pyspark-study.git # ou git@github.com:azzolinovarella/pyspark-study.git
-   cd pyspark-study
-   ```
+O projeto processa um conjunto de dados estruturado para calcular e exibir a relação entre diagnósticos positivos e óbitos. A principal métrica analisada é o indicador que mostra quantos casos são registrados para cada 1 morte em cada país ou região.
 
-2. **Crie o ambiente e instale as dependências:**
-   ```bash
-   uv sync
-   ```
+## Estrutura dos Dados
 
-3. **Abra o Jupyter Notebook:**
-   ```bash
-   uv run jupyter notebook
-   ```
+O projeto utiliza um DataFrame com as seguintes colunas principais:
+*   **Country/Region**: Nome da localidade.
+*   **ano / mes**: Período temporal dos dados.
+*   **total_casos**: Acumulado de casos confirmados.
+*   **total_mortes**: Acumulado de óbitos.
+*   **casos_por_morte**: Proporção calculada (Casos ÷ Mortes).
 
-## Objetivo
-O foco deste projeto é **aprendizado e prática com PySpark**, incluindo:
-- Leitura e limpeza de dados;
-- Criação de colunas derivadas e enriquecimento de datasets;
-- Aplicação de funções de janela (window functions);
-- Uso de partições e otimização de execução;
-- Escrita de resultados em formatos otimizados (como Parquet).
+## Tecnologias Utilizadas
 
-## Observações
-- Este projeto **não possui fins comerciais**.
-- Os dados utilizados são públicos e disponibilizados pelo **NYC Taxi & Limousine Commission (TLC)** e **Kaggle**.
+*   **Python 3.x**
+*   **Pandas**: Para manipulação e tratamento dos dados.
+*   **Plotly Express**: Para criação de gráficos interativos e dinâmicos.
+
+## Visualização de Dados
+
+A visualização principal consiste em um gráfico de dispersão (Scatter Plot) interativo onde:
+1.  **Eixo X**: Total de Casos.
+2.  **Eixo Y**: Total de Mortes.
+3.  **Cores**: Representam a métrica `casos_por_morte`, permitindo identificar rapidamente regiões com maior taxa de letalidade ou melhor cobertura de testagem.
+
+## Como rodar o projeto
+
+1.  Certifique-se de ter o Python instalado.
+2.  Instale as bibliotecas necessárias:
+    ```bash
+    pip install pandas plotly
+    ```
+3.  Execute o script Python para gerar a visualização no navegador.
+
+---
+*Dados processados para fins de análise em 2026.*
